@@ -1,0 +1,18 @@
+[project]
+name = "fair-land-use-change"
+version = "0.1.0"
+description = "climate response to LUC with fair emulator"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "bottleneck>=1.5.0",
+    "dask>=2025.5.1",
+    "fair>=2.2.2",
+    "ipykernel>=6.29.5",
+    "jupyterlab>=4.4.3",
+    "matplotlib>=3.10.3",
+    "netcdf4>=1.7.2",
+    "numpy>=2.3.0",
+    "pandas>=2.3.0",
+    "xarray>=2025.6.1",
+]
