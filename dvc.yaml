@@ -1,0 +1,25 @@
+stages:
+  download_fair_calibrate:
+    cmd: mkdir -p data/calibration && wget -O data/calibration/fair_calibrate.zip https://zenodo.org/records/10566813/files/fair_calibrate.zip 
+    outs:
+      - data/calibration/fair_calibrate.zip 
+  unzip_fair_calibrate:
+    cmd: unzip -o data/calibration/fair_calibrate.zip -d data/calibration
+    deps:
+      - data/calibration/fair_calibrate.zip
+  calibrated_constrained_parameters:
+    cmd: wget -O data/calibration/calibrated_constrained_parameters.csv https://zenodo.org/records/10566813/files/calibrated_constrained_parameters.csv 
+    outs:
+      - data/calibration/calibrated_constrained_parameters.csv
+  ch4_lifetime:
+    cmd: wget -O data/calibration/CH4_lifetime.csv https://zenodo.org/records/10566813/files/CH4_lifetime.csv
+    outs:
+      - data/calibration/CH4_lifetime.csv
+  landuse_scale_factor:
+    cmd: wget -O data/calibration/landuse_scale_factor.csv https://zenodo.org/records/10566813/files/landuse_scale_factor.csv
+    outs:
+      - data/calibration/landuse_scale_factor.csv
+  lapsi_scale_factor:
+    cmd: wget -O data/calibration/lapsi_scale_factor.csv https://zenodo.org/records/10566813/files/lapsi_scale_factor.csv
+    outs:
+      - data/calibration/lapsi_scale_factor.csv

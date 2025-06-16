@@ -1,0 +1,45 @@
+schema: '2.0'
+stages:
+  download_fair_calibrate:
+    cmd: mkdir -p data/calibration && wget -O data/calibration/fair_calibrate.zip
+      https://zenodo.org/records/10566813/files/fair_calibrate.zip
+    outs:
+    - path: data/calibration/fair_calibrate.zip
+      hash: md5
+      md5: 2509a7a03b81f84a19d4e3aa7f9e65fe
+      size: 3823330751
+  unzip_fair_calibrate:
+    cmd: unzip -o data/calibration/fair_calibrate.zip -d data/calibration
+    deps:
+    - path: data/calibration/fair_calibrate.zip
+      hash: md5
+      md5: 2509a7a03b81f84a19d4e3aa7f9e65fe
+      size: 3823330751
+  calibrated_constrained_parameters:
+    cmd: wget -O data/calibration/calibrated_constrained_parameters.csv https://zenodo.org/records/10566813/files/calibrated_constrained_parameters.csv
+    outs:
+    - path: data/calibration/calibrated_constrained_parameters.csv
+      hash: md5
+      md5: 2bbb55c0ed483656dc2efcbaf4d572a2
+      size: 755097
+  ch4_lifetime:
+    cmd: wget -O data/calibration/CH4_lifetime.csv https://zenodo.org/records/10566813/files/CH4_lifetime.csv
+    outs:
+    - path: data/calibration/CH4_lifetime.csv
+      hash: md5
+      md5: 43b008e1168ef84d95ac13173c9a78a3
+      size: 199
+  landuse_scale_factor:
+    cmd: wget -O data/calibration/landuse_scale_factor.csv https://zenodo.org/records/10566813/files/landuse_scale_factor.csv
+    outs:
+    - path: data/calibration/landuse_scale_factor.csv
+      hash: md5
+      md5: 4b9cc43db1917682a8ceca2d22fb79ad
+      size: 51
+  lapsi_scale_factor:
+    cmd: wget -O data/calibration/lapsi_scale_factor.csv https://zenodo.org/records/10566813/files/lapsi_scale_factor.csv
+    outs:
+    - path: data/calibration/lapsi_scale_factor.csv
+      hash: md5
+      md5: 0552ad0310c195bd25c8de911d31d19f
+      size: 41
